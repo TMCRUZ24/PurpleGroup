@@ -1,5 +1,5 @@
 /*CSS Style sheet*/
-
+/* This is a file containing some of the css code to stlye the html in the pages of the website.*/
 #main-wrapper{
     width: 500px;
     margin: 0 auto;
@@ -23,7 +23,7 @@
     padding: 5px;
 }
 
-#login_btn{
+.button{
     margin-top: 10px;
     background-color: #27ae60;
     padding: 5px;
