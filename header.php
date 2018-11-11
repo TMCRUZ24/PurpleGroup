@@ -1,18 +1,17 @@
 <?php
 /*
-Purple Group Project v1.0
-Login and Registration Moudule v1.0
+Purple Group Project v1.2
+View Blog Moudule v1.0
 
 Programers:
 Tabitha Binkley
 Tyson Cruz
-Mathew McSpadden
+Matthew McSpadden
 
-last updated 11/4/2018
+last updated 11/9/2018
 
-This module is a system for registering users and allowing them to login.
+This module is a system for registering users and allowing them to login. It also allows users to enter blogs into a database and veiw them.
 */
-
 /* This is a bar that sits at the top of the users screen and contains tabs that are currently hashed. It has
 a home button to the index.php. It also has a link to the login and register page in ther is no user logged in.
 and changes to a logout button linking to the logout.inc.php.
@@ -40,7 +39,7 @@ and changes to a logout button linking to the logout.inc.php.
         </a>
         <ul>
           <li><a href="index.php">Home</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="blogViewpage.php">Blog</a></li>
           <li><a href="#">About me</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
@@ -58,7 +57,11 @@ and changes to a logout button linking to the logout.inc.php.
         else if (isset($_SESSION['id'])) {
           echo '<form action="includes/logout.inc.php" method="post">
             <button type="submit" name="login-submit">Logout</button>
-          </form>';
+          </form>
+          <form action="mainblogpage.php" method="post">
+            <button type="submit" name="admin-submit">Admin</button>
+          </form>
+          ';
         }
         ?>
 
