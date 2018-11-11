@@ -1,16 +1,19 @@
 <?php
 /*
-Purple Group Project v1.2
-View Blog Moudule v2.0
+Purple Group Project v1.3
+Module v3.0
 
 Programers:
 Tabitha Binkley
 Tyson Cruz
 Matthew McSpadden
 
-last updated 11/9/2018
+last updated 11/11/2018
 
-This module is a system for registering users and allowing them to login. It also allows users to enter blogs into a database and veiw them.
+This module is a system for registering and logining in as a user by default but also allows for an admin with privleges such as viewing
+what users have registered with this system, posting blogs that viewers can see and editing and deleteing posts.
+
+This is the page to view blog posts.
 */
 require "header.php";
 require "includes/dbh.inc.php"
@@ -35,7 +38,7 @@ require "includes/dbh.inc.php"
   require_once("nbbc/nbbc.php");
 
       $bbcode = new BBCode;
-
+//this code calls to the database asking for the post id, title, content and date.
       $sql = "SELECT * FROM posts ORDER BY postid DESC";
 
       $res = mysqli_query($conn, $sql);
