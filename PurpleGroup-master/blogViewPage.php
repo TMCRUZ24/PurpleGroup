@@ -50,18 +50,13 @@ require "includes/dbh.inc.php";
               $message = $row['postcontent'];
               $id = $row['postid'];
 
-              $output = $bbcode->Parse($message);
-
-              if (strlen($output) > 100) {
-                  $output = substr($output, 0, 500) . "... <a href='view_post.php?pid=$id'>Read more";
-              }
-              echo "<strong>";
-              echo $row['date'] . "\n";
-              echo nl2br($row['posttitle'] . "\n");
-              echo "</strong>";
-              echo nl2br($output . "\n");
-              echo "<a href='view_post.php?pid=$id'>Read more</a>";
-              echo nl2br("\n\n");
+                  echo "<strong>";
+                  echo $row['date'] . "\n";
+                  echo nl2br($row['posttitle'] . "\n");
+                  echo "</strong>";
+                  //echo nl2br($output . "\n");
+                  echo "<a href='view_post.php?pid=$id'>Read more</a>";
+                  echo nl2br("\n\n");
           }
       }
     else {
