@@ -1,17 +1,17 @@
 <?php
 /*
-Purple Group Project v1.3
-Module v3.0
+Purple Group Project v1.4
+Module v4.0
 
 Programers:
 Tabitha Binkley
 Tyson Cruz
 Matthew McSpadden
 
-last updated 11/11/2018
+last updated 11/18/2018
 
-This module is a system for registering and logining in as a user by default but also allows for an admin with privleges such as viewing
-what users have registered with this system, posting blogs that viewers can see and editing and deleteing posts.
+This module is to setup user adminstration as well as post/blog content. This enables admins to see users/posts 
+and admininster them as needed. 
 
 This is a bar that sits at the top of the users screen and contains tabs that are currently hashed. It has
 a home button to the index.php. It also has a link to the login and register page in ther is no user logged in.
@@ -38,8 +38,8 @@ and changes to a logout button linking to the logout.inc.php.
         <ul>
           <li><a href="index.php">Home</a></li>
           <li><a href="blogViewPage.php">Blog</a></li>
-          <li><a href="#">About me</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.php">About me</a></li> <!--///////////This needs a link to direct to a page in the future-->
+          <li><a href="index.php">Contact</a></li>  <!--///////////this needs a link to direct to a page in the future-->
         </ul>
       </nav>
       <div class="header-login">
@@ -52,7 +52,7 @@ and changes to a logout button linking to the logout.inc.php.
             <input type="password" name="pwd" placeholder="Password">
             <button type="submit" name="login-submit">Login</button>
           </form>
-          <a href="signup.php" class="header-signup">Signup</a>';
+          <a href="registrationpage.php" class="header-signup">Signup</a>';
         }
         else if (isset($_SESSION['id']) AND ($_SESSION['role'] == 1)) {
           echo '<form action="includes/logout.inc.php" method="post">
