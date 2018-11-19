@@ -1,17 +1,17 @@
 <?php
 /*
-Purple Group Project v1.1
-View Blog Module v1.0
+Purple Group Project v1.4
+Module v4.0
 
-Programers:
+Programmers:
 Tabitha Binkley
 Tyson Cruz
-Mathew McSpadden
+Matthew McSpadden
 
-last updated 11/15/2018
+last updated 11/18/2018
 
-This module displays complete blog messages headed by their subject. Eventually we will develop this page to display
-comments left by readers regarding the post.
+This module is to setup user adminstration as well as post/blog content. This enables admins to see users/posts 
+and admininster them as needed. 
 */
 
 require "header.php";
