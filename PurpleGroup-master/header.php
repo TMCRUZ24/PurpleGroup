@@ -1,17 +1,17 @@
 <?php
 /*
-Purple Group Project v1.4
-Module v4.0
+Purple Group Project v1.3
+Module v3.0
 
 Programers:
 Tabitha Binkley
 Tyson Cruz
 Matthew McSpadden
 
-last updated 11/18/2018
+last updated 11/11/2018
 
-This module is to setup user adminstration as well as post/blog content. This enables admins to see users/posts 
-and admininster them as needed. 
+This module is a system for registering and logining in as a user by default but also allows for an admin with privleges such as viewing
+what users have registered with this system, posting blogs that viewers can see and editing and deleteing posts.
 
 This is a bar that sits at the top of the users screen and contains tabs that are currently hashed. It has
 a home button to the index.php. It also has a link to the login and register page in ther is no user logged in.
@@ -32,14 +32,14 @@ and changes to a logout button linking to the logout.inc.php.
 
     <header>
       <nav class="nav-header-main">
-        <a class="header-logo" href="index.php">
+        <a class="header-logo" href="loginpage.php">
           <img src="img/images.jpg" alt="mysql logo">
         </a>
         <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="blogViewPage.php">Blog</a></li>
-          <li><a href="index.php">About me</a></li> <!--///////////This needs a link to direct to a page in the future-->
-          <li><a href="index.php">Contact</a></li>  <!--///////////this needs a link to direct to a page in the future-->
+          <li><a href="loginpage.php">Home</a></li>
+          <li><a href="blogarchive.php">Blog</a></li>
+          <li><a href="#">About me</a></li> <!--///////////This needs a link to direct to a page-->
+          <li><a href="#">Contact</a></li>  <!--///////////this needs a link to direct to a page-->
         </ul>
       </nav>
       <div class="header-login">

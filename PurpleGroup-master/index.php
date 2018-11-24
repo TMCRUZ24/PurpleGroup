@@ -1,19 +1,19 @@
 <?php
 /*
-Purple Group Project v1.4
-Module v4.0
+Purple Group Project v1.1
+View Blog Moudule v1.0
 
 Programers:
 Tabitha Binkley
 Tyson Cruz
-Matthew McSpadden
+Mathew McSpadden
 
-last updated 11/18/2018
+last updated 11/9/2018
 
-This module is to setup user adminstration as well as post/blog content. This enables admins to see users/posts 
-and admininster them as needed. 
+This module is a system for registering users and allowing them to login. It also allows users to enter blogs into a database and veiw them.
+*/
 
-This is essentially the home page. Currently it only holds a message telling the user "You are logged in!" if there
+/* This is essentially the home page. Currently it only holds a message telling the user "You are logged in!" if there
 user session started and saying "You are logged out!" if there is no user session started.
 */
 
@@ -55,8 +55,8 @@ user session started and saying "You are logged out!" if there is no user sessio
           $date = $row['date'];
 
           $output = $bbcode ->Parse($content);
-          if(strlen($output)>1000){
-              $output=substr($output,0,1000)."... <a href='view_post.php?pid=$id'>Read more";
+          if(strlen($output)>100){
+              $output=substr($output,0,100)."... <a href='view_post.php?pid=$id'>Read more";
           }
 
 

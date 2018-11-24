@@ -1,17 +1,17 @@
 <?php
 /*
-Purple Group Project v1.4
-Module v4.0
+Purple Group Project v1.1
+View Blog Module v1.0
 
-Programmers:
+Programers:
 Tabitha Binkley
 Tyson Cruz
-Matthew McSpadden
+Mathew McSpadden
 
-last updated 11/18/2018
+last updated 11/15/2018
 
-This module is to setup user adminstration as well as post/blog content. This enables admins to see users/posts 
-and admininster them as needed. 
+This module displays complete blog messages headed by their subject. Eventually we will develop this page to display
+comments left by readers regarding the post.
 */
 
 require "header.php";
@@ -19,7 +19,7 @@ require "includes/dbh.inc.php";
 
 $id = $_GET['pid'];
 
-$sql = "SELECT posttitle, postcontent, date FROM posts WHERE postid = '".$id."'";
+$sql = "SELECT posttitle, postcontent, date FROM posts WHERE postid = '".htmlspecialchars($id)."'";
 $res = mysqli_query($conn, $sql);
 
 if (!$res) {
@@ -28,9 +28,13 @@ if (!$res) {
 
 $row = mysqli_fetch_assoc($res);
 
-$postSubject = $row['posttitle'];
-$postMessage = $row['postcontent'];
-$postDate = $row['date'];
+$postSubject = htmlspecialchars($row['posttitle']);
+$postMessage = htmlspecialchars($row['postcontent']);
+$postDate = htmlspecialchars($row['date']);
+
+    if(isset($_POST['back'])) {
+        header("Location: blogarchive.php");
+    }
 
 ?>
 
@@ -56,13 +60,17 @@ $postDate = $row['date'];
                     <th>Message: </th>
                 </tr>
                 <tr>
-                    <td><?php echo $row['date'];?></td>
-                    <td><?php echo $row['posttitle'];?></td>
-                    <td><?php echo $row['postcontent'];?></td>
+                    <td><?php echo htmlspecialchars($row['date']);?></td>
+                    <td><?php echo htmlspecialchars($row['posttitle']);?></td>
+                    <td><?php echo htmlspecialchars($row['postcontent']);?></td>
+                    <br>
                 </tr>
             </table>
         </div>
 
-</div>
+    <form action="view_post.php" method="post">
+        <br><input type = "submit" name="back" value = "Back to Archive" >
+    </form>
+    </div>
 </body>
 </html>
