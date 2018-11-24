@@ -1,17 +1,17 @@
 <?php
 /*
-Purple Group Project v1.4
-Module v4.0
+Purple Group Project v1.3
+Module v3.0
 
 Programers:
 Tabitha Binkley
 Tyson Cruz
 Matthew McSpadden
 
-last updated 11/18/2018
+last updated 11/11/2018
 
-This module is to setup user adminstration as well as post/blog content. This enables admins to see users/posts 
-and admininster them as needed. 
+This module is a system for registering and logining in as a user by default but also allows for an admin with privleges such as viewing
+what users have registered with this system, posting blogs that viewers can see and editing and deleteing posts.
 
 This is a page that allows the user to input their user information and upload it to the database. It contains a
 submit button that links to the registration.inc.php file. */
@@ -64,7 +64,6 @@ submit button that links to the registration.inc.php file. */
             if ($_GET["signup"] == "success") {
                 echo '<p class = "signupsuccess">Signup successful!</p>';
 
-                //header("Location: /blogViewPage.php"); //need this to redirect new user to blogViewPage.php
             }
         }
     ?>
@@ -91,7 +90,7 @@ submit button that links to the registration.inc.php file. */
           <input type="password" name="pwd" placeholder="Password">
           <input type="password" name="pwd-repeat" placeholder="Repeat password">
         <button type="submit" name="signup-submit">
-            <a href = "mainblogpage.php">Signup</a>
+            <a href = "createblog.php">Signup</a>
         </button>
 
     </form>
