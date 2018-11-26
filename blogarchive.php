@@ -1,16 +1,16 @@
 <?php
 /*
-Purple Group Project v1.1
-View Blog Moudule v1.0
+Purple Group Project v1.5
+Module v5.0
 
 Programers:
 Tabitha Binkley
 Tyson Cruz
-Mathew McSpadden
+Matthew McSpadden
 
-last updated 11/9/2018
+last updated 11/25/2018
 
-This module is a system for registering users and allowing them to login. It also allows users to enter blogs into a database and veiw them.
+Module 5.0 adds the search ability for blogs posts.
 */
 require "header.php";
 require "includes/dbh.inc.php";
