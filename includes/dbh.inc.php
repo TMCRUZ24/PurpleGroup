@@ -16,7 +16,6 @@ This file connects to the server and the database we are using.
 */
 
 
-
 $conn = mysqli_connect($dBServername, $dBUsername, $dBPassword, $dBName);
 
 if (!$conn) {
