@@ -1,18 +1,17 @@
 <?php
 /*
-Purple Group Project v1.0
-Login and Registration Moudule v1.0
+Purple Group Project v1.5
+Module v5.0
 
 Programers:
 Tabitha Binkley
 Tyson Cruz
-Mathew McSpadden
+Matthew McSpadden
 
-last updated 11/4/2018
+last updated 11/25/2018
 
-This module is a system for registering users and allowing them to login.
-*/
-/*
+Module 5.0 adds the search ability for blogs posts. 
+
 This file connects to the server and the database we are using.
 */
 
