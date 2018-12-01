@@ -32,7 +32,7 @@ require_once("nbbc/nbbc.php");
 <h1>Blog Archive</h1><br><br>
 <h2>Search: </h2><br>
     <form method="post" action = "blogarchive.php?go" id = "searchform"]>
-      <p>Please select a item type</p>
+      <p>Please select a item type</p><br>
         <input type="radio" name="searchhow" <?php if (isset($searchtype) && $searchtype=="date") echo "checked";?> value="date">Date &nbsp;&nbsp; &nbsp;
         <input type="radio" name="searchhow" <?php if (isset($searchtype) && $searchtype=="posttitle") echo "checked";?> value="posttitle">Subject<br>
         <input type = "text" name = "searchinput"><br><br>
@@ -78,7 +78,6 @@ require_once("nbbc/nbbc.php");
           $id = $row['postid'];
           $title = $row['posttitle'];
           $date = $row['date'];
-
 
           $posts .= "<div class='wrapper-main'>
                       <section class='section-default'>

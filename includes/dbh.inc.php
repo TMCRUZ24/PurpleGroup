@@ -15,6 +15,10 @@ Module 5.0 adds the search ability for blogs posts.
 This file connects to the server and the database we are using.
 */
 
+$dBServername = "localhost";
+$dBUsername = "root";
+$dBPassword = "password";
+$dBName = "purpledatabase";
 
 $conn = mysqli_connect($dBServername, $dBUsername, $dBPassword, $dBName);
 

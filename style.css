@@ -219,6 +219,19 @@ table, th, td {
     alignment: left;
 }
 
+#main-comment-wrapper{
+    margin: 0 auto;
+    padding: 10px;
+    alignment: left;
+}
+
+#comment-table{
+    margin: 0 auto;
+    padding: 10px;
+    background: white;
+    alignment: left;
+}
+
 subjectField{
     padding: 10px;
 }

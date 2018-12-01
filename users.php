@@ -19,10 +19,10 @@ This page shows all the users for an admin.
 require 'header.php';
 require 'includes/dbh.inc.php';
 
-//if (!$_SESSION['role'] == 1) {
-//  header("Location: index.php");
-//  exit();
-//}
+if (!$_SESSION['role'] == 1) {
+  header("Location: index.php");
+  exit();
+}
 ?>
 <!DOCTYPE html>
   <html>
