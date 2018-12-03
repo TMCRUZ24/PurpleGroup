@@ -1,6 +1,6 @@
 ![status](https://img.shields.io/badge/status-In%20Development-orange.svg)  
 # PurpleGroup
-School project to setup a [PHP WebApp](https://clcwk1webapp.azurewebsites.net) that is a blog.
+School project to setup a [PHP WebApp](https://purplegroup.000webhostapp.com) that is a blog.
 
 # Contributors
 Matthew McSpadden - [mcspadden](https://github.com/mcspadden)   

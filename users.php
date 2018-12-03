@@ -1,17 +1,18 @@
 <?php
 
 /*
-Purple Group Project v1.5
-Module v5.0
+Purple Group Project v1.6
+Module v6.0
 
 Programers:
 Tabitha Binkley
 Tyson Cruz
 Matthew McSpadden
 
-last updated 11/25/2018
+last updated 12/03/2018
 
-Module 5.0 adds the search ability for blogs posts.
+Module 6.0 adds the feature of displaying any comments related to a blog post. All comments are displayed at the bottom
+of the page. Form on the bottom is also used to leave any new comments on the currently viewed post.
 
 This page shows all the users for an admin.
 */
@@ -19,10 +20,10 @@ This page shows all the users for an admin.
 require 'header.php';
 require 'includes/dbh.inc.php';
 
-//if (!$_SESSION['role'] == 1) {
-//  header("Location: index.php");
-//  exit();
-//}
+if (!$_SESSION['role'] == 1) {
+  header("Location: index.php");
+  exit();
+}
 ?>
 <!DOCTYPE html>
   <html>
