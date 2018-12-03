@@ -11,7 +11,8 @@ Matthew McSpadden
 
 last updated 12/03/2018
 
-Module 6.0 adds the comment ability for blogs posts.
+Module 6.0 adds the feature of displaying any comments related to a blog post. All comments are displayed at the bottom
+of the page. Form on the bottom is also used to leave any new comments on the currently viewed post.
 
 This is a page that allows the user to input their user information and upload it to the database. It contains a
 submit button that links to the registration.inc.php file. */
