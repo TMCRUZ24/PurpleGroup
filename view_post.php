@@ -84,7 +84,7 @@ if(isset($_POST['comment'])){
             </table>
         </div>
 
-       <a href="blogarchive.php">Back to Archive</a>
+       <br><a class="button" href="blogarchive.php">Back to Archive</a>
     </div>
 
     <div id = "main-comment-wrapper">
