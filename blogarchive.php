@@ -11,11 +11,10 @@ Matthew McSpadden
 
 last updated 12/03/2018
 
-Module 6.0 adds the comment ability for blogs posts.
+Module 6.0 adds the feature of displaying any comments related to a blog post. All comments are displayed at the bottom
+of the page. Form on the bottom is also used to leave any new comments on the currently viewed post.
 
-This is the admin page that sets the foundation for all admin features, panels, etc.
-
-Admin login for testing purposes: Username-testadmin Password-test
+This page is to view the blog posts (the Archive). 
 
 */
 
