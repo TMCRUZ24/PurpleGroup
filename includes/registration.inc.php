@@ -1,16 +1,18 @@
 <?php
+
 /*
-Purple Group Project v1.5
-Module v5.0
+Purple Group Project v1.6
+Module v6.0
 
 Programers:
 Tabitha Binkley
 Tyson Cruz
 Matthew McSpadden
 
-last updated 11/25/2018
+last updated 12/03/2018
 
-Module 5.0 adds the search ability for blogs posts.
+Module 6.0 adds the feature of displaying any comments related to a blog post. All comments are displayed at the bottom
+of the page. Form on the bottom is also used to leave any new comments on the currently viewed post.
 
 This file contains the background php code for the registration page. It checks for errors the users may made
 while entering their information. It also has the information to query the database to check if the username has already
