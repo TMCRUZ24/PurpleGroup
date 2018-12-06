@@ -28,12 +28,13 @@ if (!$_SESSION['role'] == 1) {
 <!DOCTYPE html>
   <html>
   <head>
-    <title>Blog</title>
+    <title>Users</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
-    <div class='wrapper-main'>
-                <section class='section-default'>
+    <div class="container">
+          <div class="mx-auto" style="width: 1000px;">
+
     <h1>Users</h1>
     <?php
 
@@ -66,7 +67,12 @@ if (!$_SESSION['role'] == 1) {
         echo "There are no posts to display!";
       }
      ?>
-   </section>
+   </div>
  </div>
   </body>
   </html>
+
+<?php
+
+  require "footer.php";
+?>

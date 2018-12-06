@@ -29,12 +29,13 @@ submit button that links to the registration.inc.php file. */
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
-<body style="background-color: #1abc9c">
+<body>
+    <div class="container">
+          <div class="mx-auto" style="width: 1000px;">
 
-<div id = "main-wrapper">
+<div>
         <center>
         <h2>User Registration</h2>
-        <img src = img/images.jpg alt= "Mysql Logo" class = "PHPmySQL"/>
         </center>
 
 
@@ -89,8 +90,8 @@ submit button that links to the registration.inc.php file. */
       ?>
 
           <input type="password" name="pwd" placeholder="Password">
-          <input type="password" name="pwd-repeat" placeholder="Repeat password">
-        <button type="submit" name="signup-submit">
+          <input type="password" name="pwd-repeat" placeholder="Repeat Password">
+        <button type="submit" name="signup-submit" class="btn btn-light">
             <a href = "createblog.php">Signup</a>
         </button>
 
@@ -98,3 +99,8 @@ submit button that links to the registration.inc.php file. */
 </div>
 </body>
 </html>
+
+<?php
+
+  require "footer.php";
+?>

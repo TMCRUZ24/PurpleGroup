@@ -14,7 +14,7 @@ last updated 12/03/2018
 Module 6.0 adds the feature of displaying any comments related to a blog post. All comments are displayed at the bottom
 of the page. Form on the bottom is also used to leave any new comments on the currently viewed post.
 
-This is the admin page.
+This is the admin page for viewing blog posts (where an admin can delete and edit posts).
 
 Admin login for testing purposes: Username-testadmin Password-test
 
@@ -32,10 +32,13 @@ require 'includes/dbh.inc.php';
 <!DOCTYPE html>
   <html>
   <head>
-    <title>Blog</title>
+    <title>Blog Posts</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
+      
+      <div class="container">
+          <div class="mx-auto" style="width: 1000px;">
 
     <?php
 //This code calls the post from the database asking for just the post id the titles and the dates.
@@ -78,6 +81,12 @@ require 'includes/dbh.inc.php';
         echo "There are no posts to display!";
       }
      ?>
-
+    </div>
+    </div>
   </body>
   </html>
+  
+<?php
+
+  require "footer.php";
+?>

@@ -14,7 +14,7 @@ last updated 12/03/2018
 Module 6.0 adds the feature of displaying any comments related to a blog post. All comments are displayed at the bottom
 of the page. Form on the bottom is also used to leave any new comments on the currently viewed post.
 
-This page allows you to edit a post.
+This page allows you to edit a post. You only have access to this page if you are an admin. 
 
 */
 
@@ -64,10 +64,13 @@ if (!$_SESSION['role'] == 1) {
 <!DOCTYPE html>
  <html>
  <header>
-   <title>Admin post</title>
+   <title>Edit a Post</title>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
  </header>
  <body>
+        <div class="container">
+          <div class="mx-auto" style="width: 1000px;">
+              <h1>Edit a Post</h1>
  <?php
       $sql_get = "SELECT * FROM posts WHERE postid=$pid LIMIT 1";
       $res = mysqli_query($conn, $sql_get);
@@ -85,6 +88,12 @@ if (!$_SESSION['role'] == 1) {
         }
       }
  ?>
-
+    </div>
+    </div>
  </body>
  </html>
+
+<?php
+
+  require "footer.php";
+?>
