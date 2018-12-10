@@ -1,6 +1,6 @@
 <?php
 /*
-Purple Group Project v1.6
+Purple Group Project v1.5
 Module v6.0
 
 Programers:
@@ -8,10 +8,10 @@ Tabitha Binkley
 Tyson Cruz
 Matthew McSpadden
 
-last updated 12/03/2018
+last updated 11/30/2018
 
 Module 6.0 adds the feature of displaying any comments related to a blog post. All comments are displayed at the bottom
-of the page. Form on the bottom is also used to leave any new comments on the currently viewed post.
+of the page. Form on the bottom is also used to leave any new comments on the currently view post.
 */
 
 require "header.php";
@@ -58,35 +58,36 @@ if(isset($_POST['comment'])){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blog Post</title>
+    <title>My Blogs</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel = "Stylesheet" href = "style.css">
 </head>
-<body>
+<body style="background-color: #1abc9c">
 
-<div class="container padding-bottom">
-          <div class="mx-auto" style="width: 1000px;">
-    <h1>Blog Post</h1><br><br>
+<div id = "main-blog-wrapper">
+    <h1>My Blogs</h1><br><br>
+    <h3>My Messages: </h3>
+
         <div>
-            <table class="table">
-                 <thead>
-                    <tr>
-                        <th scope="col">Date</th>
-                        <th scope="col">Subject</th>
-                        <th scope="col">Message</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><?php echo htmlspecialchars($blogrow['date']);?></th>
-                        <td><?php echo htmlspecialchars($blogrow['posttitle']);?></th>
-                        <td><?php echo htmlspecialchars($blogrow['postcontent']);?></td>
-                    </tr>
-                </tbody>
+            <table>
+                <tr>
+                    <th>Date: </th>
+                    <th>Subject: </th>
+                    <th>Message: </th>
+                </tr>
+                <tr>
+                    <td><?php echo htmlspecialchars($blogrow['date']);?></td>
+                    <td><?php echo htmlspecialchars($blogrow['posttitle']);?></td>
+                    <td><?php echo htmlspecialchars($blogrow['postcontent']);?></td>
+                    <br>
+                </tr>
             </table>
         </div>
 
-       <br><button type="button" class="btn btn-dark" href="blogarchive.php">Back to Posts</button>
+    <form action="view_post.php" method="post">
+        <br><input type = "submit" name="back" value = "Back to Archive" >
+    </form>
+    </div>
 
     <div id = "main-comment-wrapper">
         <br><h1><center>Comments: </center></h1>
@@ -94,7 +95,9 @@ if(isset($_POST['comment'])){
             <?php
 
             //Pulling comments from the database and assigning them to variables
-            $commentsql = "SELECT comment_datetime, comment_uid, comment FROM comments WHERE comment_fk = '".htmlspecialchars($id)."'";
+            $commentsql = "SELECT cid, comment_uid, comment_datetime, num_of_ratings, comment_score, comment 
+                          FROM comments
+                          WHERE comment_fk = '".htmlspecialchars($id)."'";
             $commentres = mysqli_query($conn, $commentsql);
             if (!$commentres) {
                  die("Connection failed: " . mysqli_connect_error());
@@ -104,27 +107,34 @@ if(isset($_POST['comment'])){
 //////////This section blends PHP with HTML and only displays the "Comments" table when found in the database//////////
             if (mysqli_num_rows($commentres) > 0) {
             ?>
-            
-            <table class="table">
-                 <thead>
-                    <tr>
-                        <th scope="col">Date</th>
-                        <th scope="col">User</th>
-                        <th scope="col">Comment</th>
-                    </tr>
-                </thead>
-                
+    <table id="comment-table">
+    <tr>
+        <th>User: </th>
+        <th>Date: </th>
+        <th>Score: </th>
+        <th>Comment: </th>
+    </tr>
                 <!--///////////////Loop displays comments in a table as long as there are comments stores///////////-->
                 <?php
-                    while ($commentrow = mysqli_fetch_assoc($commentres)) {
+
+                while ($commentrow = mysqli_fetch_assoc($commentres)) {
+                    $commentid = $commentrow['cid'];
+                    $link = "<a href='rating.php?pid=$commentid'>Rate this comment...</a>";
+                    if($commentrow['comment_score'] > 0) {
+                            $commentscore = number_format($commentrow['comment_score'] / $commentrow['num_of_ratings'], 1)." Stars";
+                        }
+                        else{
+                            $commentscore = "Comment has no rating...";
+                        }
                 ?>
-                <tbody>
-                    <tr>
-                        <td><?php echo htmlspecialchars($commentrow['comment_datetime']); ?></td>
-                        <td><?php echo htmlspecialchars($commentrow['comment_uid']); ?></td>
-                        <td><?php echo htmlspecialchars($commentrow['comment']); ?></td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <td><?php echo htmlspecialchars($commentrow['comment_uid']); ?></td>
+                    <td><?php echo htmlspecialchars($commentrow['comment_datetime']); ?></td>
+                    <td><?php echo $commentscore?></td>
+                    <td><?php echo htmlspecialchars($commentrow['comment']); ?></td>
+                    <td><?php echo $link?></td>
+
+                </tr>
                 <?php }
             }
              else {
@@ -146,9 +156,6 @@ if(isset($_POST['comment'])){
         </center>
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-</div>
-</div>
-</div>
 </body>
 </html>
 <?php
