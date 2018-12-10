@@ -31,23 +31,32 @@ if (!$_SESSION['role'] == 1) {
   <DOCTYPE! html>
   <html>
   <head>
-    <title>Admin Page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Admin Control Panel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
-    <div class="wrapper-main">
-      <section class="section-default">
+      <div class="container">
+          <div class="mx-auto" style="width: 1000px;">
+              <center>
       <h1>Admin Control Panel</h1>
       <form class="form-signup" action="adminview.php" method="post">
-        <button type="submit" name="admin-view">Blog Posts</button>
+        <button type="submit" class="btn btn-dark" name="admin-view">Blog Posts</button>
       </form>
+      <br>
       <form class="form-signup" action="createblog.php" method="post">
-        <button type="submit" name="admin-post">New Post</button>
+        <button type="submit" class="btn btn-dark" name="admin-post">New Post</button>
       </form>
+      <br>
       <form class="form-signup" action="users.php" method="post">
-        <button type="submit" name="admin-users">View Users</button>
+        <button type="submit" class="btn btn-dark" name="admin-users">View Users</button>
       </form>
-      </section>
+      </center>
+    </div>
     </div>
   </body>
   </html>
+  
+<?php
+
+  require "footer.php";
+?>

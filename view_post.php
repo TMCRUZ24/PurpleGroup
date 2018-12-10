@@ -58,34 +58,35 @@ if(isset($_POST['comment'])){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Blogs</title>
+    <title>Blog Post</title>
 
-    <link rel = "Stylesheet" href = "style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
-<body style="background-color: #1abc9c">
+<body>
 
-<div id = "main-blog-wrapper">
-    <h1>My Blogs</h1><br><br>
-    <h3>My Messages: </h3>
-
+<div class="container padding-bottom">
+          <div class="mx-auto" style="width: 1000px;">
+    <h1>Blog Post</h1><br><br>
         <div>
-            <table>
-                <tr>
-                    <th>Date: </th>
-                    <th>Subject: </th>
-                    <th>Message: </th>
-                </tr>
-                <tr>
-                    <td><?php echo htmlspecialchars($blogrow['date']);?></td>
-                    <td><?php echo htmlspecialchars($blogrow['posttitle']);?></td>
-                    <td><?php echo htmlspecialchars($blogrow['postcontent']);?></td>
-                    <br>
-                </tr>
+            <table class="table">
+                 <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?php echo htmlspecialchars($blogrow['date']);?></th>
+                        <td><?php echo htmlspecialchars($blogrow['posttitle']);?></th>
+                        <td><?php echo htmlspecialchars($blogrow['postcontent']);?></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
-       <br><a class="button" href="blogarchive.php">Back to Archive</a>
-    </div>
+       <br><button type="button" class="btn btn-dark" href="blogarchive.php">Back to Posts</button>
 
     <div id = "main-comment-wrapper">
         <br><h1><center>Comments: </center></h1>
@@ -103,21 +104,27 @@ if(isset($_POST['comment'])){
 //////////This section blends PHP with HTML and only displays the "Comments" table when found in the database//////////
             if (mysqli_num_rows($commentres) > 0) {
             ?>
-    <table id="comment-table">
-    <tr>
-        <th>Date:</th>
-        <th>User:</th>
-        <th>Comment:</th>
-    </tr>
+            
+            <table class="table">
+                 <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Comment</th>
+                    </tr>
+                </thead>
+                
                 <!--///////////////Loop displays comments in a table as long as there are comments stores///////////-->
                 <?php
                     while ($commentrow = mysqli_fetch_assoc($commentres)) {
                 ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($commentrow['comment_datetime']); ?></td>
-                    <td><?php echo htmlspecialchars($commentrow['comment_uid']); ?></td>
-                    <td><?php echo htmlspecialchars($commentrow['comment']); ?></td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td><?php echo htmlspecialchars($commentrow['comment_datetime']); ?></td>
+                        <td><?php echo htmlspecialchars($commentrow['comment_uid']); ?></td>
+                        <td><?php echo htmlspecialchars($commentrow['comment']); ?></td>
+                    </tr>
+                </tbody>
                 <?php }
             }
              else {
@@ -139,6 +146,9 @@ if(isset($_POST['comment'])){
         </center>
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
+</div>
+</div>
+</div>
 </body>
 </html>
 <?php

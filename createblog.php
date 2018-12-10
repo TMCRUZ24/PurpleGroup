@@ -52,17 +52,18 @@ if (!$_SESSION['role'] == 1) {
         <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <title>My Blogs</title>
+            <title>New Post</title></title>
 
-            <link rel = "Stylesheet" href = "style.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         </head>
-        <body style="background-color: #1abc9c">
+        <body>
 
-        <div id = "main-blog-wrapper">
+        <div class="container">
+            <div class="mx-auto" style="width: 1000px;">
 
 
 
-            <h1>My Blog Page</h1>
+            <h1>New Blog Post</h1>
             <br>
             <br>
             <h2>Subject:</h2>
@@ -72,9 +73,15 @@ if (!$_SESSION['role'] == 1) {
             <br>
             <h2>Message:</h2>
             <textarea name="messageField" rows="10" cols="75" placeholder = "Enter a message..."></textarea>
+            <br>
             <input type = "submit" name="post" value = "Submit" >
     </form>
-
-</div>
+            </div>
+        </div>
 </body>
 </html>
+
+<?php
+
+  require "footer.php";
+?>

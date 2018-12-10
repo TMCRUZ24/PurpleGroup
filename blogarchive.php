@@ -19,6 +19,7 @@ This page is to view the blog posts (the Archive).
 */
 
 require "header.php";
+require "footer.php";
 require "includes/dbh.inc.php";
 require_once("nbbc/nbbc.php");
 
@@ -28,28 +29,37 @@ require_once("nbbc/nbbc.php");
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Archive</title>
+    <title>Blog</title>
 
-    <link rel = "Stylesheet" href = "style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
-<body style="background-color: #1abc9c">
+<body>
 
-<div id = "main-blog-wrapper">
-<h1>Blog Archive</h1><br><br>
-<h2>Search: </h2><br>
-    <form method="post" action = "blogarchive.php?go" id = "searchform"]>
-      <p>Please select a item type</p><br>
-        <input type="radio" name="searchhow" <?php if (isset($searchtype) && $searchtype=="date") echo "checked";?> value="date">Date &nbsp;&nbsp; &nbsp;
-        <input type="radio" name="searchhow" <?php if (isset($searchtype) && $searchtype=="posttitle") echo "checked";?> value="posttitle">Subject<br>
-        <input type = "text" name = "searchinput"><br><br>
-        <input type= "submit" name= "submitsearch" value = "Search">&nbsp;&nbsp;&nbsp;
-        <input type= "submit" name= "resetsearch" value = "Reset"><br><br>
-        <br><br>
-    </form>
-</div>
-<center>
-    <br><h1><strong>My Messages: </strong></h1><br>
-</center>
+      <div class="container">
+          <div class="mx-auto" style="width: 1000px;">
+              <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Search</h5>
+        <p class="card-text">
+            <form method="post" action = "blogarchive.php?go" id = "searchform"]>
+                <p>Please select an item type</p><br>
+                    <input type="radio" name="searchhow" <?php if (isset($searchtype) && $searchtype=="date") echo "checked";?> value="date">Date &nbsp;&nbsp; &nbsp;
+                    <input type="radio" name="searchhow" <?php if (isset($searchtype) && $searchtype=="posttitle") echo "checked";?> value="posttitle">Subject<br>
+                    <input type = "text" name = "searchinput"><br><br>
+                    <input class="btn btn-light" type= "submit" name= "submitsearch" value = "Search">&nbsp;&nbsp;&nbsp;
+                    <input class="btn btn-dark" type= "submit" name= "resetsearch" value = "Reset">
+            </form>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Recent Posts</h5>
+        <p class="card-text">
 
   <?php
 
@@ -100,7 +110,13 @@ require_once("nbbc/nbbc.php");
   }
 
   ?>
-
+    
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
+</div> <!-- Width -->
+</div> <!-- Container -->
 </body>
 </html>
