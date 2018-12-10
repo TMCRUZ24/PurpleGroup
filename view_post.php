@@ -154,6 +154,11 @@ if(isset($_POST['comment'])){
                 <br><input type = "submit" name="comment" value = "Comment" >
             </form>
         </center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
 </body>
