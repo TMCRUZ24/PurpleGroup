@@ -84,9 +84,7 @@ if(isset($_POST['comment'])){
             </table>
         </div>
 
-    <form action="view_post.php" method="post">
-        <br><input type = "submit" name="back" value = "Back to Archive" >
-    </form>
+    <br><button type="button" class="btn btn-dark" href="blogarchive.php">Back to Posts</button>
     </div>
 
     <div id = "main-comment-wrapper">
